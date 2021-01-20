@@ -1,0 +1,285 @@
+// ---------------------------------------------------------------------------
+// Imports
+ 
+@import "base";
+@import "susy";
+@import "compass/css3";
+ 
+$total-columns : 4;
+$column-width  : 60px;
+$gutter-width  : 20px;
+$grid-padding  : $gutter-width / 2;
+
+$total-wp:320px;
+$total-wd:1000px;
+
+/*$pod: 640px 8;*/
+$desk: 1000px 10;
+ 
+/* -------------------------------------------------------------------------*/
+/* Layout */
+ 
+.container 
+{
+ 
+    /* min */
+    @include container;
+
+ 	/* 640
+ 	 @include at-breakpoint($pod) 
+ 	 {
+ 	     @include container;
+ 	     @include susy-grid-background;
+ 	 } */
+  
+    /* 1024 */
+    @include at-breakpoint($desk) 
+    {
+        @include container;
+    }
+    /* max 
+    @include at-breakpoint(1280px 12)
+    {
+        @include container;
+        @include susy-grid-background;
+    }*/
+    
+    
+ 	.logo
+ 		{
+ 			@include span-columns(2,4);
+ 			margin-top: 20px;
+            margin-left: 50px;
+ 			margin-right: 80%;
+
+ 			@include at-breakpoint($desk)
+ 				{
+ 					@include span-columns(2,10);
+                    margin-left: 10px;
+                    margin-right: 0px;
+ 				}
+ 		}
+ 	.type
+ 		{
+ 			@include span-columns(2,4);
+ 			margin-top: 20px;
+ 			height: 25px;
+ 			margin-right: 0px;
+            margin-left: 15px;
+ 			@include border-radius(5px);
+ 			border: 2px solid rgba(211,68,113,0.74);
+
+
+ 			@include at-breakpoint($desk)
+ 				{
+ 					@include span-columns(2,10);
+                    margin-left: 20px;
+ 					margin-right: 10px;
+                    margin-top: 90px;
+ 				}
+ 		}
+ 	.search
+ 		{
+ 			@include span-columns(2 omega,4);
+ 			margin-top: 20px;
+
+ 			@include at-breakpoint($desk)
+ 				{
+ 					@include span-columns(6 omega,10);
+                    margin-left: -10px;
+                    margin-top: 90px;
+ 				}
+ 		}
+ 	.line
+ 		{
+ 			@include span-columns( 4 omega ,4);
+ 			height: 1px;
+ 			margin-top:20px;
+ 			margin-bottom: 20px;
+ 			overflow: hidden;
+            background-image: url(../images/special_mobil_05_03.png);
+ 			@include at-breakpoint($desk)
+ 				{
+ 					@include span-columns(10 omega,10);
+                    background-image: url(../images/special_pc_03.png);
+ 				}
+ 			
+ 		}
+ 	.choses
+ 		{
+ 			@include span-columns(3,4);
+            width: 60%;
+            margin-left: 30px;
+ 			@include border-radius(5px);
+ 			text-align: center;
+ 			color: #FFFFFF;
+            font-size: 14px;
+ 			background-color: #E80B63;
+            .span
+                {
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+            @include at-breakpoint($desk)
+                {
+                    @include span-columns( 2 , 10 );
+
+                    height: 500px;
+                    text-align: left;
+                    margin-left: 10px;
+                    margin-right: 0px;
+                    background-color: rgba(255,255,255,0.1);
+                    color: #7E826F; 
+                }
+ 		}
+    .point
+        {
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 8.7px 5px 0 5px;
+            border-color: #ffffff transparent transparent transparent;
+            margin-top: -17px;
+            margin-left: 125px;
+            
+            @include at-breakpoint($desk)
+                {
+                    margin-left: 60px;
+                    width: 0px;
+                    height: 0px;
+                    border-style: solid;
+                    border-width: 8.7px 5px 0 5px;
+                    border-color: #7e826f transparent transparent transparent;
+                }
+        }
+    .choses_a
+        {
+           
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+            font-size: 14px;
+           @include at-breakpoint($desk)
+               {
+                   @include span-columns( 2 , 10 );
+                   width: 100%;
+                   text-align: left;
+                   margin-right: 0px;
+                   background-color: rgba(255,255,255,0.1);
+                   color: #7E826F; 
+               }
+        }
+    .area_box
+        {
+            border-bottom: 1px solid rgba(248,248,248,0.78);
+            padding-bottom: 3px;
+            padding-top: 3px;
+            text-align: left;
+            @include at-breakpoint($desk)
+                {
+                    @include span-columns( 2, 3 );
+                    width: 100%;
+                    border: none;
+                    text-align: center;
+                    background-color: rgba(211,211,211,0.8);
+                    color: #040404;
+                    margin-top: 10px;
+                    @include border-radius(5px);
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 14px;    
+
+                }
+        }
+    .area_word
+        {
+            padding-left: 25px;
+             @include at-breakpoint($desk)
+                {
+                    padding-left: 0px;
+                }
+        }
+    .hidden
+        {
+            display: none;
+        }
+    .color
+        {
+           
+            background-color: #AF0549;
+             @include at-breakpoint($desk)
+                {
+                    background-color: rgba(211,211,211,0.8);
+                }
+        }
+    .area
+        {
+            @include span-columns(4,4);
+            margin-top: 10px;
+            margin-left: 10px;
+            @include at-breakpoint($desk)
+                {
+                    @include span-columns(7 omega,10);
+                    color: #5B5B5B;
+                    
+                }
+        }
+    .area_word_a
+        {
+            @include span-columns(1 ,4);
+            font-size: 13px;
+            color: #252620;
+            @include at-breakpoint($desk)
+                {
+                    @include span-columns(1,7);
+                    color: #5B5B5B;
+                    margin-left: -40px;
+                }  
+        }
+    .table_div
+        {
+            border-left: 3px solid #F7245E;
+            padding-left: 20px;
+            margin-top: 20px;
+            
+
+            @include at-breakpoint($desk)
+                {
+                    margin-left: -40px;
+                    margin-top: 20px;
+                }
+        }  
+    .tr_c_a
+        {
+            color: #6D7061;
+            height: 40px;
+            @include at-breakpoint($desk)
+                {
+                    
+                }
+        } 
+    .tr_c_b
+        {
+            color: #e41453;
+            @include at-breakpoint($desk)
+                {
+                    
+                }
+        } 
+    .tr_w
+        {
+            margin-left: 20px;
+            font-size: 13px;
+            a:link {color:#438FED}
+            a:visited {color:#438FED}
+            a:active {color:#438FED}
+            a:hover {color:#438FED} 
+            @include at-breakpoint($desk)
+                {
+                    
+                }
+        } 
+    
+
+}
